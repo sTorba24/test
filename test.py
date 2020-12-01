@@ -11,4 +11,4 @@ for i in range(len(data)):
     image = c.create_oval(data[i][0],data[i][1], data[i][0], data[i][1], fill='black')
 
 root.mainloop()
-image.save('res.png')
+image.save('res.jpg')
