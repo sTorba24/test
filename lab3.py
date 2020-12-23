@@ -13,7 +13,7 @@ with open('DS7.txt') as f:
     for line in f:
         data.append([int(x) for x in line.split()])
 for i in range(len(data)):
-    c.create_oval(data[i][0],data[i][1], data[i][0], data[i][1], fill='black')
+    image = c.create_oval(data[i][0],data[i][1], data[i][0], data[i][1], fill='black')
 
 
 pixel_count = len(data)
@@ -47,7 +47,7 @@ for i in range(len(res)-1):
     dot2 = data[res[i]]
     
     # малюємо відрізок синього кольору між 2 точками
-    c.create_line((dot1[0], dot1[1], dot2[0], dot2[1]), fill='blue')
+    image = c.create_line((dot1[0], dot1[1], dot2[0], dot2[1]), fill='blue')
 
 root.mainloop()
 
@@ -56,5 +56,5 @@ with open('convex hull.txt', 'w') as file:
     for i in res:
         file.write(f"{data[i][0]} {data[i][1]}\n")
    
-
+image.save('res.jpg')
 
